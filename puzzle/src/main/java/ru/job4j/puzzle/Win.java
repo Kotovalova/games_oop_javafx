@@ -28,12 +28,10 @@ public class Win {
         for (int i = 0; i < board.length; i++) {
             if (monoHorizontal(board, i)) {
                 return true;
-            }else if (monoVertical(board, i)) {
+            } else if (monoVertical(board, i)) {
                 return true;
             }
         }
         return false;
     }
-
-
 }
