@@ -25,7 +25,7 @@ public class Win {
 
     public static boolean check(int[][] board) {
         for (int i = 0; i < board.length; i++) {
-            if (monoHorizontal(board, i) || monoVertical(board, i)) {
+            if (monoHorizontal(board, i) | monoVertical(board, i)) {
                 return true;
             }
         }
