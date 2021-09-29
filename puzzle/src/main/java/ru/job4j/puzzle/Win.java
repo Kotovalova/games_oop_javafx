@@ -15,7 +15,6 @@ public class Win {
     public static boolean monoVertical(int[][] board, int column) {
         boolean result = true;
         for (int i = 0; i < board.length; i++) {
-            System.out.println(board[i][column]);
             if (board[i][column] != 1) {
                 result = false;
                 break;
@@ -26,9 +25,7 @@ public class Win {
 
     public static boolean check(int[][] board) {
         for (int i = 0; i < board.length; i++) {
-            if (monoHorizontal(board, i)) {
-                return true;
-            } else if (monoVertical(board, i)) {
+            if (monoHorizontal(board, i) || monoVertical(board, i)) {
                 return true;
             }
         }
