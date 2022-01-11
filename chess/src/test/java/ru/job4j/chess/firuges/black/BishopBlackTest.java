@@ -20,7 +20,7 @@ public class BishopBlackTest {
     public void testCopy() {
         BishopBlack bishopBlack = new BishopBlack(Cell.C8);
         bishopBlack = (BishopBlack) bishopBlack.copy(Cell.F8);
-        assertThat(bishopBlack.position().toString(), is("F8"));
+        assertThat(bishopBlack.position(), is(Cell.F8));
     }
 
     @Test
