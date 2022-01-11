@@ -1,13 +1,15 @@
 package ru.job4j.chess;
 
+import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 import ru.job4j.chess.firuges.Cell;
 import ru.job4j.chess.firuges.black.BishopBlack;
 
+import java.util.Arrays;
+
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class LogicTest {
 
@@ -20,6 +22,7 @@ public class LogicTest {
         logic.move(Cell.C1, Cell.H6);
         Logic logicNew = new Logic();
         logicNew.add(new BishopBlack(Cell.H6));
-        assertTrue(logicNew.equals(logic));
+        boolean a = logic.equals(logicNew);
+        assertTrue(logic.equals(logicNew));
     }
 }
