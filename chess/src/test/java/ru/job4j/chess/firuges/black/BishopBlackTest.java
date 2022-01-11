@@ -22,4 +22,13 @@ public class BishopBlackTest {
         bishopBlack = (BishopBlack) bishopBlack.copy(Cell.F8);
         assertThat(bishopBlack.position().toString(), is("F8"));
     }
+
+    @Test
+    public void testWay() {
+        BishopBlack bishopBlack = new BishopBlack(Cell.C1);
+        Cell[] wayBishopBlack = bishopBlack.way(Cell.G5);
+        for (Cell e: wayBishopBlack) {
+            System.out.println(e);
+        }
+    }
 }
