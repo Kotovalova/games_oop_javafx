@@ -27,8 +27,13 @@ public class BishopBlackTest {
     public void testWay() {
         BishopBlack bishopBlack = new BishopBlack(Cell.C1);
         Cell[] wayBishopBlack = bishopBlack.way(Cell.G5);
-        for (Cell e: wayBishopBlack) {
-            System.out.println(e);
-        }
+        Cell[] result = {Cell.D2, Cell.E3, Cell.F4, Cell.G5};
+        assertThat(wayBishopBlack, is(result));
+    }
+
+    @Test
+    public void testIsDiagonalTrue() {
+        BishopBlack bishopBlack = new BishopBlack(Cell.F8);
+        assertTrue(bishopBlack.isDiagonal(bishopBlack.position(), Cell.C5));
     }
 }
