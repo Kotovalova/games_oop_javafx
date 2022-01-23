@@ -13,19 +13,6 @@ import static org.junit.Assert.*;
 
 public class LogicTest {
 
-    @Ignore
-    @Test
-    public void movePositive()
-            throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
-        Logic logic = new Logic();
-        logic.add(new BishopBlack(Cell.C1));
-        logic.move(Cell.C1, Cell.H6);
-        Logic logicNew = new Logic();
-        logicNew.add(new BishopBlack(Cell.H6));
-        boolean a = logic.equals(logicNew);
-        assertTrue(logic.equals(logicNew));
-    }
-
     @Test(expected = OccupiedCellException.class)
     public void moveOccupiedCellException()
             throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
@@ -40,6 +27,13 @@ public class LogicTest {
             throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
         Logic logic = new Logic();
         logic.add(new BishopBlack(Cell.C1));
+        logic.move(Cell.C1, Cell.H5);
+    }
+
+    @Test(expected = FigureNotFoundException.class)
+    public void moveFigureNotFoundException()
+            throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
+        Logic logic = new Logic();
         logic.move(Cell.C1, Cell.H5);
     }
 }

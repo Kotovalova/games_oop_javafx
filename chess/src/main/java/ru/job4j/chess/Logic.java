@@ -25,10 +25,7 @@ public final class Logic {
     private boolean free(Cell[] steps) throws OccupiedCellException {
         for (int i = 0; i < index; i++) {
             for (Cell step: steps) {
-                if (figures[i].equals(null)) {
-                    return true;
-                }
-                if (figures[i].position().equals(step)) {
+                if (figures[i] != null && figures[i].position().equals(step)) {
                     throw new OccupiedCellException(
                             String.format("On the way, the cell is occupied")
                     );
